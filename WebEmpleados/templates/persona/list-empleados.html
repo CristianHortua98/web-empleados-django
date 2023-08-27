@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista Empleados {% endblock title %}
+
+
+{% block content %}
+
+    <section class="pt-3 pt-lg-5">
+        <div class="container">
+            <h4 style="color: #28666E;">Lista Empleados</h4>
+            <div class="card shadow-sm mb-4 mt-4">
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Job</th>
+                                    <th>Departamento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                {% for empleado in listaEmpleados %}
+
+                                    <tr>
+                                        <td>{{ empleado.id }}</td>
+                                        <td>{{ empleado }}</td>
+                                        <td>{{ empleado.get_job_display }}</td>
+                                        <td>{{ empleado.departamento }}</td>
+                                    </tr>
+                                
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!--
+                <ul>
+                    {% for empleado in listaEmpleados %}
+                        <li>{{ empleado }} <a href="{% url 'persona_app:empleado-detail' empleado.id %}">Ver</a> | <a href="{% url 'persona_app:empleado-edit' empleado.id %}">Editar</a> | <a href="{% url 'persona_app:empleado-delete' empleado.id %}">Eliminar</a></li>
+                    {% endfor %}
+                    
+                </ul>
+
+
+                {% if is_paginated %}
+                    <ul>
+                        {% if page_obj.has_previous %}
+
+                            <li><a href="?page={{page_obj.previous_page_number}}">&laquo;</a></li>
+
+                        {% else %}
+                    
+                            <li><a href="#">&laquo;</a></li>
+
+                        {% endif %}
+
+                        {% for i in paginator.page_range %}
+
+                            <li><a href="?page={{i}}">{{i}}</a></li>
+
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+
+                            <li><a href="?page={{page_obj.next_page_number}}">&raquo;</a></li>
+
+
+                        {% else %}
+                    
+                            <li><a href="#">&raquo;</a></li>
+
+                        {% endif %}
+
+
+                    </ul>
+
+                {% endif %}
+                -->
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-xl shadow-sm" style="background-color: #033F63;">
+    <div class="container">
+        <a class="navbar-brand text-white" href="{% url 'persona_app:inicio' %}"><h2>Empleados</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'persona_app:empleado-list' %}">Listar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'departamento_app:departamentos-list' %}">Departamentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'persona_app:admin-empleado-list' %}">Administrar</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav">
+            <!--
+            <form class="d-flex" role="search">
+                <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar Empleado" aria-label="Search">
+            </form>-->
+            <li class="nav-item">
+                <a class="btn btn-success btn-sm text-white" href="{% url 'persona_app:empleado-add' %}">Registrar Nuevo</a>
+            </li>
+        </ul>
+    </div>
+</nav>

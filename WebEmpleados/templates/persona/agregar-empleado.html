@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="card shadow mt-3">
+        <div class="card-header bg-primary text-white">
+            <h4>Crear Empleado</h4>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Nombres:</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Apellidos:</label>
+                        {{ form.last_name }}
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Trabajo:</label>
+                        {{ form.job }}
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Departamento:</label>
+                        {{ form.departamento }}
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Habilidades:</label>
+                        {{ form.habilidades }}
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Hoja de Vida:</label>
+                        {{ form.hoja_vida }}
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="text-primary fw-bold">Avatar:</label>
+                        {{ form.avatar }}
+                    </div>
+                </div>
+                <hr>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

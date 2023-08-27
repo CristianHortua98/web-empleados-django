@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+Pagina Inicio Sistema Empleados
+
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section>
+    <div class="card mb-5">
+        <img class="img-fluid" style="height: 700px;" src="{% static 'img/portada.jpg' %}">
+    </div>
+    <div class="mt-5 mb-5">
+        <h3 style="color: #28666E;" class="text-center">BIENVENIDO AL SISTEMA DE REGISTRO DE EMPLEADOS</h3>
+        <div class="d-flex justify-content-center"> <!-- Centrar horizontalmente -->
+            <div class="alert alert-success" role="alert" style="width: 50%; margin: 0 auto;"> <!-- Ancho del 50%, margen automático para centrar -->
+                <h5>Registro y Control de Empleados</h5><hr>
+                <p>Justo lobortis dapibus sollicitudin fames interdum pulvinar proin duis imperdiet varius nisl suspendisse accumsan facilisis, dictumst luctus blandit erat pharetra mattis libero nascetur nec massa cursus orci.</p>
+            </div>
+        </div>
+    </div>
+    <!--<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card"><p>Texto 1</p></div>
+            </div>
+            <div class="col-md-6">
+                <div class="card"><p>Texto 2</p></div>
+            </div>
+
+        </div>
+
+    </div>-->
+</section>
+
+{% endblock content %}

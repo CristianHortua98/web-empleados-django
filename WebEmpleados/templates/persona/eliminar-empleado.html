@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="card shadow mt-3">
+        <div class="card-header bg-danger text-white">
+            <h4>Eliminar Empleado</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <p>Desea eliminar el registro <b>"{{ object }}"</b> ?</p>
+                {{ form }}
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a class="btn btn-warning text-white" href="{% url 'persona_app:empleado-list' %}">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
