@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white"><h4>Departamentos</h4></div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped" id="example" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Nombre Corto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for departamento in departamentos %}
+                            <tr>
+                                <td>{{departamento.id}}</td>
+                                <td>{{departamento.name}}</td>
+                                <td>{{departamento.short_name}}</td>
+                                <td><a class="btn btn-info btn-sm text-white" href="{% url 'persona_app:area-empleado-list' departamento.short_name %}">Ver Empleados</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

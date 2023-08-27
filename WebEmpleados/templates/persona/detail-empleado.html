@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="card">
+        
+        <div class="card-header bg-primary text-white">
+
+            <h4>Datos Empleado</h4>
+
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><b class="text-primary">Nombre:</b> {{ empleado.first_name }} {{ empleado.last_name }}</p>
+                    <p><b class="text-primary">Trabajo:</b> {{ empleado.get_job_display }}</p>
+                    <p><b class="text-primary">Departamento:</b> {{ empleado.departamento }}</p>
+                    <p><b class="text-primary">Hoja Vida:</b> {{ empleado.hoja_vida|safe }}</p>
+                </div>
+                <div class="col-md-4">
+                    <p><b class="text-primary">Avatar</b></p>
+                    {% if empleado.avatar %}
+
+                        <img class="img-thumbnail" style="width: 300px; height: 300;" src="{{ empleado.avatar.url }}">
+
+                    {% else %}
+
+                        {% load static %}
+
+                        <img class="img-thumbnail" style="width: 300px; height: 300;" src="{% static 'img/no-profile.png' %}">
+
+                    {% endif %}
+
+                </div>
+            </div>
+            <hr>
+            <h5 class="text-primary">Habilidades</h5>
+
+            {% for h in empleado.habilidades.all %}
+
+                <p>{{ h.habilidad }}</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

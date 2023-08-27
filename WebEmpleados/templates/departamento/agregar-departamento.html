@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="container">
+  <div class="card shadow mt-3">
+    <div class="card-header bg-primary text-white">
+      <h4>Agregar Departamento</h4>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+        <h5 class="fw-bold">Datos Empleado</h5>
+            <label class="text-primary fw-bold">Nombres:</label>
+            <input type="text" name="{{ form.nombre.name }}" class="form-control" maxlength="50" placeholder="Escriba sus nombres...">
+            <br>
+            <label class="text-primary fw-bold">Apellidos:</label>
+            <input type="text" name="{{ form.apellidos.name }}" class="form-control" maxlength="50" placeholder="Escriba sus apellidos...">
+        <br>
+        <h5 class="fw-bold">Datos Departamento</h5>
+        <p><label class="text-primary fw-bold">Departamento:</label> {{ form.departamento }}</p>
+        <p><label class="text-primary fw-bold">Short Name:</label> {{ form.shortname }}</p>
+        <hr>
+        <div class="d-grid gap-1">
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

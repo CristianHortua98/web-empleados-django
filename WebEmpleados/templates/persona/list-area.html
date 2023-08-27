@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header bg-primary text-white"><h3>Lista Empleados Departamento: {{ departamento }}</h3></div>
+        <div class="card-body">
+            <ul>
+                {% for empleado in listAreasEmpleados %}
+            
+                    <li>{{ empleado.first_name }} {{ empleado.last_name }}</li>
+            
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
